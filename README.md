@@ -7,7 +7,7 @@ Nowoczesna strona skupu iPhone'ów z panelem administracyjnym, kalkulatorem wyce
 - Next.js 15 App Router, TypeScript
 - Tailwind CSS i komponenty shadcn-style w `src/components/ui`
 - Prisma + SQLite dla lokalnego startu
-- Własna sesja admina: bcrypt, podpisane HTTP-only cookie, opcjonalny TOTP
+- NextAuth.js v5 Credentials: bcrypt, JWT session, opcjonalny TOTP
 - Framer Motion, dark mode, JSON-LD, sitemap i robots
 
 ## Uruchomienie
@@ -45,8 +45,7 @@ Przed wdrożeniem zmień `NEXTAUTH_SECRET`, `ADMIN_PASSWORD`, `NEXT_PUBLIC_SITE_
 
 - `GET /api/prices`
 - `POST /api/valuation`
-- `POST /api/auth/login`
-- `POST /api/auth/logout`
+- `GET|POST /api/auth/[...nextauth]`
 - `PATCH /api/admin/leads/:id`
 - `POST /api/admin/prices`
 - `PATCH /api/admin/prices/:id`
@@ -77,7 +76,7 @@ Zalecenia po wdrożeniu:
 Zaimplementowano:
 
 - walidację Zod po stronie serwera
-- HTTP-only cookie z podpisem HMAC i czasem życia 8h
+- NextAuth JWT session z czasem życia 8h
 - bcrypt dla haseł
 - opcjonalny sekret TOTP w modelu administratora
 - origin guard dla mutacji API
@@ -85,7 +84,7 @@ Zaimplementowano:
 - nagłówki bezpieczeństwa i CSP w middleware
 - brak podatnej biblioteki `xlsx`; eksport XLS jest HTML table z właściwym MIME
 
-Uwaga: `npm audit` dla Next 15.5.20 raportuje umiarkowane ostrzeżenie PostCSS wewnątrz paczki `next`. `npm audit fix --force` proponuje cofnięcie Next do starej, nieakceptowalnej wersji, więc należy aktualizować Next, gdy upstream opublikuje poprawkę.
+Uwaga: `npm audit` dla Next 15.5.20 raportuje umiarkowane ostrzeżenie PostCSS wewnątrz paczki `next`. `npm audit fix --force` proponuje cofnięcie Next do starej, nieakceptowalnej wersji, więc należy aktualizować Next, gdy upstream opublikuje poprawkę. Użyta jest beta NextAuth v5, ponieważ stabilna linia v4 wnosiła dodatkowe ostrzeżenie audytu przez zależność `uuid`.
 
 ## Deployment Vercel
 

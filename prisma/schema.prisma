@@ -1,0 +1,110 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  ADMIN
+  EDITOR
+}
+
+enum DeviceCondition {
+  EXCELLENT
+  GOOD
+  FAIR
+  DAMAGED
+}
+
+enum LeadStatus {
+  NEW
+  SENT
+  RECEIVED
+  VERIFIED
+  PAID
+  REJECTED
+}
+
+enum ContentType {
+  TEXT
+  MARKDOWN
+  IMAGE
+  JSON
+}
+
+model User {
+  id               String   @id @default(cuid())
+  email            String   @unique
+  name             String
+  passwordHash     String
+  role             UserRole @default(ADMIN)
+  twoFactorSecret  String?
+  twoFactorEnabled Boolean  @default(false)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model PriceItem {
+  id        String          @id @default(cuid())
+  model     String
+  slug      String
+  capacity  String
+  condition DeviceCondition
+  price     Int
+  isActive  Boolean         @default(true)
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+
+  @@unique([model, capacity, condition])
+  @@index([slug])
+}
+
+model Lead {
+  id                 String      @id @default(cuid())
+  valuationNumber    String      @unique
+  model              String
+  capacity           String
+  visualCondition    String
+  technicalCondition String
+  batteryHealth      Int
+  accessories        String
+  estimatedPrice     Int
+  finalPrice         Int?
+  status             LeadStatus  @default(NEW)
+  contactName        String
+  email              String
+  phone              String
+  city               String?
+  notes              String?
+  consentMarketing   Boolean     @default(false)
+  createdAt          DateTime    @default(now())
+  updatedAt          DateTime    @updatedAt
+  events             LeadEvent[]
+
+  @@index([email])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model LeadEvent {
+  id        String     @id @default(cuid())
+  leadId    String
+  lead      Lead       @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  status    LeadStatus
+  note      String?
+  createdAt DateTime   @default(now())
+
+  @@index([leadId])
+}
+
+model ContentBlock {
+  id        String      @id @default(cuid())
+  key       String      @unique
+  title     String
+  value     String
+  type      ContentType @default(TEXT)
+  updatedAt DateTime    @updatedAt
+}
