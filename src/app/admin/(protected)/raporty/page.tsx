@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const metadata = {
-  title: "Raporty admin | iPhoneSkup.pl"
+  title: "Raporty admin | JablkoSkup.pl"
 };
 
 export default function AdminReportsPage() {

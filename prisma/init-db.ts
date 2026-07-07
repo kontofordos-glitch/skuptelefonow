@@ -63,6 +63,17 @@ const statements = [
     "type" TEXT NOT NULL DEFAULT 'TEXT',
     "updatedAt" DATETIME NOT NULL
   )`,
+  `CREATE TABLE IF NOT EXISTS "ContactMessage" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "name" TEXT NOT NULL,
+    "email" TEXT NOT NULL,
+    "phone" TEXT,
+    "message" TEXT NOT NULL,
+    "status" TEXT NOT NULL DEFAULT 'NEW',
+    "error" TEXT,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" DATETIME NOT NULL
+  )`,
   `CREATE UNIQUE INDEX IF NOT EXISTS "User_email_key" ON "User"("email")`,
   `CREATE INDEX IF NOT EXISTS "PriceItem_slug_idx" ON "PriceItem"("slug")`,
   `CREATE UNIQUE INDEX IF NOT EXISTS "PriceItem_model_capacity_condition_key" ON "PriceItem"("model", "capacity", "condition")`,
@@ -71,7 +82,10 @@ const statements = [
   `CREATE INDEX IF NOT EXISTS "Lead_status_idx" ON "Lead"("status")`,
   `CREATE INDEX IF NOT EXISTS "Lead_createdAt_idx" ON "Lead"("createdAt")`,
   `CREATE INDEX IF NOT EXISTS "LeadEvent_leadId_idx" ON "LeadEvent"("leadId")`,
-  `CREATE UNIQUE INDEX IF NOT EXISTS "ContentBlock_key_key" ON "ContentBlock"("key")`
+  `CREATE UNIQUE INDEX IF NOT EXISTS "ContentBlock_key_key" ON "ContentBlock"("key")`,
+  `CREATE INDEX IF NOT EXISTS "ContactMessage_email_idx" ON "ContactMessage"("email")`,
+  `CREATE INDEX IF NOT EXISTS "ContactMessage_status_idx" ON "ContactMessage"("status")`,
+  `CREATE INDEX IF NOT EXISTS "ContactMessage_createdAt_idx" ON "ContactMessage"("createdAt")`
 ];
 
 async function main() {

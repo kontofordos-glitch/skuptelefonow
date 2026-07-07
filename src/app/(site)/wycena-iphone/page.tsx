@@ -13,7 +13,7 @@ export default function ValuationPage() {
     "@context": "https://schema.org",
     "@type": "Offer",
     name: "Wycena iPhone online",
-    url: "https://iphoneskup.pl/wycena-iphone",
+    url: "https://jablkoskup.pl/wycena-iphone",
     priceCurrency: "PLN",
     areaServed: "PL",
     itemOffered: {

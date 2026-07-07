@@ -3,7 +3,7 @@ import { LoginForm } from "@/components/admin/login-form";
 import { getSessionUser } from "@/lib/auth";
 
 export const metadata = {
-  title: "Logowanie admin | iPhoneSkup.pl"
+  title: "Logowanie admin | JablkoSkup.pl"
 };
 
 export default async function AdminLoginPage() {

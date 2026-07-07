@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Polityka prywatności",
-  description: "Polityka prywatności iPhoneSkup.pl: dane kontaktowe, dane z formularzy, cel przetwarzania i prawa użytkownika.",
+  description: "Polityka prywatności JablkoSkup.pl: dane kontaktowe, dane z formularzy, cel przetwarzania i prawa użytkownika.",
   alternates: { canonical: "/polityka-prywatnosci" }
 };
 
@@ -15,7 +15,7 @@ export default function PrivacyPage() {
         <div className="prose prose-neutral mt-8 max-w-none dark:prose-invert">
           <h2>Administrator danych</h2>
           <p>
-            Administratorem danych jest iPhoneSkup.pl. Dane kontaktowe podane w formularzu służą do obsługi wyceny,
+            Administratorem danych jest JablkoSkup.pl. Dane kontaktowe podane w formularzu służą do obsługi wyceny,
             kontaktu z klientem, realizacji sprzedaży i obowiązków księgowych.
           </p>
           <h2>Zakres danych</h2>

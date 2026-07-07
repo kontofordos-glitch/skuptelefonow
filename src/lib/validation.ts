@@ -54,3 +54,11 @@ export const contentPatchSchema = z.object({
   value: z.string().trim().min(1).max(2000),
   type: z.enum(["TEXT", "MARKDOWN", "IMAGE", "JSON"]).optional().default("TEXT")
 });
+
+export const contactMessageSchema = z.object({
+  name: cleanString(2, 120),
+  email: z.string().trim().email().max(160).transform((value) => value.toLowerCase()),
+  phone: z.string().trim().max(30).optional().default(""),
+  message: z.string().trim().min(10).max(1200),
+  consent: z.literal(true)
+});

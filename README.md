@@ -1,6 +1,6 @@
-# iPhoneSkup.pl
+# JablkoSkup.pl
 
-Nowoczesna strona skupu iPhone'ów z panelem administracyjnym, kalkulatorem wyceny, SQLite/Prisma i responsywnym UI w stylu Apple.
+Nowoczesna strona skupu iPhone'ów z panelem administracyjnym, kalkulatorem wyceny, formularzem kontaktowym, SQLite/Prisma i responsywnym UI w stylu Apple.
 
 ## Stack
 
@@ -8,6 +8,7 @@ Nowoczesna strona skupu iPhone'ów z panelem administracyjnym, kalkulatorem wyce
 - Tailwind CSS i komponenty shadcn-style w `src/components/ui`
 - Prisma + SQLite dla lokalnego startu
 - NextAuth.js v5 Credentials: bcrypt, JWT session, opcjonalny TOTP
+- Nodemailer dla formularza kontaktowego przez SMTP
 - Framer Motion, dark mode, JSON-LD, sitemap i robots
 
 ## Uruchomienie
@@ -24,7 +25,7 @@ Domyślny panel: `http://localhost:3000/admin`
 
 Konto seed:
 
-- email: `admin@iphoneskup.pl`
+- email: `admin@jablkoskup.pl`
 - hasło: `Admin123!ChangeMe`
 
 Przed wdrożeniem zmień `NEXTAUTH_SECRET`, `ADMIN_PASSWORD`, `NEXT_PUBLIC_SITE_URL` i uruchom seed ponownie.
@@ -33,18 +34,36 @@ Przed wdrożeniem zmień `NEXTAUTH_SECRET`, `ADMIN_PASSWORD`, `NEXT_PUBLIC_SITE_
 
 - `/` - strona główna z hero, SEO i blokami zaufania
 - `/wycena-iphone` - kalkulator i formularz leada
-- `/modele-iphone` - karty modeli
-- `/kontakt` - FAQ i Google Maps
+- `/modele-iphone` - karty modeli, w tym iPhone 17, iPhone 17 Pro i iPhone 17 Pro Max
+- `/kontakt` - telefon, email, formularz kontaktowy, live chat, FAQ i Google Maps
 - `/admin` - dashboard
 - `/admin/zlecenia` - statusy zleceń
 - `/admin/cennik` - edycja cen
 - `/admin/tresci` - edycja treści hero i banerów
 - `/admin/raporty` - CSV i Excel-kompatybilny XLS
 
+## Formularz Kontaktowy
+
+Endpoint `POST /api/contact` zapisuje wiadomość w bazie `ContactMessage` i próbuje wysłać email na `CONTACT_TO_EMAIL`.
+
+Wymagane zmienne SMTP do realnej wysyłki:
+
+```bash
+CONTACT_TO_EMAIL="kontakt@jablkoskup.pl"
+SMTP_HOST="smtp.example.com"
+SMTP_PORT="587"
+SMTP_USER="smtp-user"
+SMTP_PASSWORD="smtp-password"
+SMTP_FROM="JablkoSkup.pl <kontakt@jablkoskup.pl>"
+```
+
+Jeśli SMTP nie jest ustawione, wiadomość zostanie zapisana w bazie, a API zwróci komunikat o wymaganej konfiguracji wysyłki.
+
 ## API
 
 - `GET /api/prices`
 - `POST /api/valuation`
+- `POST /api/contact`
 - `GET|POST /api/auth/[...nextauth]`
 - `PATCH /api/admin/leads/:id`
 - `POST /api/admin/prices`
@@ -67,7 +86,7 @@ Zalecenia po wdrożeniu:
 
 - Ustaw prawdziwy `NEXT_PUBLIC_SITE_URL`.
 - Dodaj zweryfikowany profil Google Business Profile dla frazy `skup iPhone Warszawa`.
-- Rozbuduj strony modelowe o osobne URL-e dla top modeli, np. `/modele-iphone/iphone-16-pro`.
+- Rozbuduj strony modelowe o osobne URL-e dla top modeli, np. `/modele-iphone/iphone-17-pro`.
 - Dodaj realne opinie z datą, miejscowością i zgodą klienta.
 - Monitoruj Core Web Vitals w Search Console.
 

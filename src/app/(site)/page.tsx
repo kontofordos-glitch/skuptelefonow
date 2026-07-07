@@ -14,7 +14,7 @@ import { getContentBlocks } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Skup iPhone Warszawa i online - sprzedaj iPhone'a szybko",
   description:
-    "iPhoneSkup.pl to skup iPhone Warszawa i online. Sprawdź wycenę iPhone, wyślij telefon, przejdź weryfikację i odbierz szybką płatność.",
+    "JablkoSkup.pl to skup iPhone Warszawa i online. Sprawdź wycenę iPhone, wyślij telefon, przejdź weryfikację i odbierz szybką płatność.",
   alternates: { canonical: "/" }
 };
 
@@ -31,7 +31,7 @@ export default async function HomePage() {
   const content = await getContentBlocks({
     hero_title: "Sprzedaj iPhone'a szybko i bezpiecznie",
     hero_subtitle:
-      "iPhoneSkup.pl wycenia, odbiera, weryfikuje i wypłaca pieniądze bez przeciągania. Online, kuriersko albo w punkcie w Warszawie.",
+      "JablkoSkup.pl wycenia, odbiera, weryfikuje i wypłaca pieniądze bez przeciągania. Online, kuriersko albo w punkcie w Warszawie.",
     trust_banner: "Ponad 14 800 kupionych iPhone'ów, 38 mln zł wypłat i średnia ocena 4.9/5."
   });
 
@@ -39,7 +39,7 @@ export default async function HomePage() {
     "@context": "https://schema.org",
     "@type": "Offer",
     name: "Skup iPhone i wycena online",
-    url: "https://iphoneskup.pl/wycena-iphone",
+    url: "https://jablkoskup.pl/wycena-iphone",
     areaServed: ["Polska", "Warszawa"],
     priceCurrency: "PLN",
     availability: "https://schema.org/InStock",

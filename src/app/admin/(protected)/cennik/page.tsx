@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prisma";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Cennik admin | iPhoneSkup.pl"
+  title: "Cennik admin | JablkoSkup.pl"
 };
 
 export default async function AdminPricingPage() {

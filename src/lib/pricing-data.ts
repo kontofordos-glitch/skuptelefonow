@@ -25,6 +25,27 @@ export const leadStatusTone = {
 
 export const publicModels = [
   {
+    name: "iPhone 17 Pro Max",
+    slug: "iphone-17-pro-max",
+    priceFrom: 3650,
+    priceTo: 5900,
+    badges: ["Nowość", "Najwyższa wycena"]
+  },
+  {
+    name: "iPhone 17 Pro",
+    slug: "iphone-17-pro",
+    priceFrom: 3260,
+    priceTo: 5350,
+    badges: ["Nowość", "Pro"]
+  },
+  {
+    name: "iPhone 17",
+    slug: "iphone-17",
+    priceFrom: 2420,
+    priceTo: 4100,
+    badges: ["Nowość", "Szybka wycena"]
+  },
+  {
     name: "iPhone 16 Pro Max",
     slug: "iphone-16-pro-max",
     priceFrom: 2950,
@@ -97,6 +118,8 @@ export const publicModels = [
 ];
 
 export const recentlyBought = [
+  { model: "iPhone 17 Pro Max 256 GB", city: "Warszawa", price: 5480, time: "7 min temu" },
+  { model: "iPhone 17 Pro 256 GB", city: "Kraków", price: 4990, time: "16 min temu" },
   { model: "iPhone 16 Pro Max 256 GB", city: "Warszawa", price: 4580, time: "12 min temu" },
   { model: "iPhone 15 Pro 512 GB", city: "Wrocław", price: 3180, time: "28 min temu" },
   { model: "iPhone 14 Pro 128 GB", city: "Gdańsk", price: 2040, time: "47 min temu" },
@@ -104,6 +127,13 @@ export const recentlyBought = [
 ];
 
 export const defaultPriceMatrix = [
+  { model: "iPhone 17 Pro Max", slug: "iphone-17-pro-max", capacity: "256 GB", condition: "EXCELLENT", price: 5200 },
+  { model: "iPhone 17 Pro Max", slug: "iphone-17-pro-max", capacity: "256 GB", condition: "GOOD", price: 4520 },
+  { model: "iPhone 17 Pro Max", slug: "iphone-17-pro-max", capacity: "256 GB", condition: "FAIR", price: 3640 },
+  { model: "iPhone 17 Pro", slug: "iphone-17-pro", capacity: "256 GB", condition: "EXCELLENT", price: 4870 },
+  { model: "iPhone 17 Pro", slug: "iphone-17-pro", capacity: "256 GB", condition: "GOOD", price: 4240 },
+  { model: "iPhone 17", slug: "iphone-17", capacity: "128 GB", condition: "EXCELLENT", price: 3450 },
+  { model: "iPhone 17", slug: "iphone-17", capacity: "128 GB", condition: "GOOD", price: 3000 },
   { model: "iPhone 16 Pro Max", slug: "iphone-16-pro-max", capacity: "256 GB", condition: "EXCELLENT", price: 4200 },
   { model: "iPhone 16 Pro Max", slug: "iphone-16-pro-max", capacity: "256 GB", condition: "GOOD", price: 3650 },
   { model: "iPhone 16 Pro Max", slug: "iphone-16-pro-max", capacity: "256 GB", condition: "FAIR", price: 2940 },

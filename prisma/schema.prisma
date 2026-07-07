@@ -35,6 +35,12 @@ enum ContentType {
   JSON
 }
 
+enum ContactStatus {
+  NEW
+  SENT
+  FAILED
+}
+
 model User {
   id               String   @id @default(cuid())
   email            String   @unique
@@ -107,4 +113,20 @@ model ContentBlock {
   value     String
   type      ContentType @default(TEXT)
   updatedAt DateTime    @updatedAt
+}
+
+model ContactMessage {
+  id        String        @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  message   String
+  status    ContactStatus @default(NEW)
+  error     String?
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  @@index([email])
+  @@index([status])
+  @@index([createdAt])
 }

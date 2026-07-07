@@ -27,7 +27,7 @@ export function PriceEditor({ prices }: { prices: PriceRow[] }) {
   const [rows, setRows] = useState(prices);
   const [savingId, setSavingId] = useState<string | null>(null);
   const [newRow, setNewRow] = useState({
-    model: "iPhone 16 Pro",
+    model: "iPhone 17 Pro",
     capacity: "128 GB",
     condition: "GOOD" as keyof typeof conditionLabels,
     price: 3200

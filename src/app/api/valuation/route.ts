@@ -46,7 +46,7 @@ async function estimatePrice(input: {
 
 function valuationNumber() {
   const suffix = Math.random().toString(36).slice(2, 6).toUpperCase();
-  return `ISK-${new Date().getFullYear()}-${Date.now().toString().slice(-5)}${suffix}`;
+  return `JSK-${new Date().getFullYear()}-${Date.now().toString().slice(-5)}${suffix}`;
 }
 
 export async function POST(request: NextRequest) {

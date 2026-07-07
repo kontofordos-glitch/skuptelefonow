@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export const metadata: Metadata = {
   title: "Jak działa skup iPhone - wycena, wysyłka, weryfikacja, płatność",
   description:
-    "Zobacz jak działa skup iPhone w iPhoneSkup.pl: wycena online, bezpieczna wysyłka, weryfikacja urządzenia i szybka płatność.",
+    "Zobacz jak działa skup iPhone w JablkoSkup.pl: wycena online, bezpieczna wysyłka, weryfikacja urządzenia i szybka płatność.",
   alternates: { canonical: "/jak-dziala-skup" }
 };
 

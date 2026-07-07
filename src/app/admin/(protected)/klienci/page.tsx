@@ -6,7 +6,7 @@ import { formatCurrency, formatDate } from "@/lib/utils";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Klienci admin | iPhoneSkup.pl"
+  title: "Klienci admin | JablkoSkup.pl"
 };
 
 export default async function AdminCustomersPage() {

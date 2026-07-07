@@ -16,9 +16,9 @@ export function SiteFooter() {
         <div>
           <Link href="/" className="flex items-center gap-2 text-base font-semibold">
             <span className="flex h-8 w-8 items-center justify-center rounded-md bg-foreground text-sm font-bold text-background">
-              iS
+              JS
             </span>
-            <span>iPhoneSkup.pl</span>
+            <span>JablkoSkup.pl</span>
           </Link>
           <p className="mt-4 max-w-sm text-sm leading-6 text-muted-foreground">
             Skup iPhone&apos;ów online i stacjonarnie w Warszawie. Wycena, bezpieczna wysyłka,
@@ -36,7 +36,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t">
         <div className="container flex flex-col gap-2 py-5 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 iPhoneSkup.pl. Wszystkie prawa zastrzeżone.</p>
+          <p>© 2026 JablkoSkup.pl. Wszystkie prawa zastrzeżone.</p>
           <p>Przykładowy serwis produkcyjny gotowy pod wdrożenie Vercel.</p>
         </div>
       </div>

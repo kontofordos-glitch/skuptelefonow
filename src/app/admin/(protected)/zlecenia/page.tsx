@@ -9,7 +9,7 @@ import { formatCurrency, formatDate } from "@/lib/utils";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Zlecenia admin | iPhoneSkup.pl"
+  title: "Zlecenia admin | JablkoSkup.pl"
 };
 
 export default async function AdminLeadsPage() {

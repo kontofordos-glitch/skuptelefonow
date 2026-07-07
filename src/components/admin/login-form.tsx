@@ -11,7 +11,7 @@ import { Label } from "@/components/ui/label";
 
 export function LoginForm() {
   const router = useRouter();
-  const [email, setEmail] = useState("admin@iphoneskup.pl");
+  const [email, setEmail] = useState("admin@jablkoskup.pl");
   const [password, setPassword] = useState("Admin123!ChangeMe");
   const [totp, setTotp] = useState("");
   const [message, setMessage] = useState<string | null>(null);

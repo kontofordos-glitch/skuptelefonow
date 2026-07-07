@@ -6,7 +6,7 @@ import { TrustStats } from "@/components/trust-stats";
 export const metadata: Metadata = {
   title: "Opinie klientów - zaufany skup iPhone",
   description:
-    "Opinie klientów iPhoneSkup.pl. Sprawdź dlaczego klienci wybierają nasz skup iPhone online i skup iPhone Warszawa.",
+    "Opinie klientów JablkoSkup.pl. Sprawdź dlaczego klienci wybierają nasz skup iPhone online i skup iPhone Warszawa.",
   alternates: { canonical: "/opinie" }
 };
 

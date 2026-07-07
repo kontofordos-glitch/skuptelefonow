@@ -9,7 +9,7 @@ import { formatCurrency } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Modele iPhone w skupie - cennik Apple iPhone",
   description:
-    "Lista modeli iPhone przyjmowanych w skupie: iPhone 16, 15, 14, 13, 12 oraz wersje Pro i Pro Max. Sprawdź widełki wyceny.",
+    "Lista modeli iPhone przyjmowanych w skupie: iPhone 17, 16, 15, 14, 13, 12 oraz wersje Pro i Pro Max. Sprawdź widełki wyceny.",
   alternates: { canonical: "/modele-iphone" }
 };
 

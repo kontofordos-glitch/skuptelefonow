@@ -61,7 +61,7 @@ export async function GET(request: NextRequest) {
       return new NextResponse(body, {
         headers: {
           "Content-Type": "application/vnd.ms-excel; charset=utf-8",
-          "Content-Disposition": "attachment; filename=iphoneskup-leady.xls"
+          "Content-Disposition": "attachment; filename=jablkoskup-leady.xls"
         }
       });
     }
@@ -70,7 +70,7 @@ export async function GET(request: NextRequest) {
     return new NextResponse(csv, {
       headers: {
         "Content-Type": "text/csv; charset=utf-8",
-        "Content-Disposition": "attachment; filename=iphoneskup-leady.csv"
+        "Content-Disposition": "attachment; filename=jablkoskup-leady.csv"
       }
     });
   } catch (error) {

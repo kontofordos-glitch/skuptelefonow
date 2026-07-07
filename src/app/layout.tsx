@@ -3,13 +3,13 @@ import type { ReactNode } from "react";
 import "./globals.css";
 import { Providers } from "@/components/providers";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://iphoneskup.pl";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://jablkoskup.pl";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "iPhoneSkup.pl - skup iPhone, wycena online i szybka wypłata",
-    template: "%s | iPhoneSkup.pl"
+    default: "JablkoSkup.pl - skup iPhone, wycena online i szybka wypłata",
+    template: "%s | JablkoSkup.pl"
   },
   description:
     "Skup iPhone online i Warszawa. Sprzedaj iPhone'a szybko i bezpiecznie, sprawdź wycenę, wyślij telefon i odbierz płatność po weryfikacji.",
@@ -22,11 +22,16 @@ export const metadata: Metadata = {
     "wycena iphone",
     "skup apple"
   ],
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-32x32.png",
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
-    title: "iPhoneSkup.pl - sprzedaj iPhone'a szybko i bezpiecznie",
+    title: "JablkoSkup.pl - sprzedaj iPhone'a szybko i bezpiecznie",
     description: "Wycena online, bezpieczna wysyłka, weryfikacja i płatność nawet tego samego dnia.",
     url: siteUrl,
-    siteName: "iPhoneSkup.pl",
+    siteName: "JablkoSkup.pl",
     locale: "pl_PL",
     type: "website",
     images: [
@@ -51,7 +56,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   const organizationJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "iPhoneSkup.pl",
+    name: "JablkoSkup.pl",
     url: siteUrl,
     logo: `${siteUrl}/images/hero-iphone-buyback.png`,
     contactPoint: {
@@ -61,7 +66,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       areaServed: "PL",
       availableLanguage: ["pl"]
     },
-    sameAs: ["https://www.facebook.com/iphoneskup", "https://www.instagram.com/iphoneskup"]
+    sameAs: ["https://www.facebook.com/jablkoskup", "https://www.instagram.com/jablkoskup"]
   };
 
   return (

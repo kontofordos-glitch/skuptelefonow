@@ -12,7 +12,7 @@ const routes = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://iphoneskup.pl";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://jablkoskup.pl";
   const now = new Date();
 
   return routes.map((route) => ({

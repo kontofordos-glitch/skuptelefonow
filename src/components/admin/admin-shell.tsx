@@ -36,10 +36,10 @@ export function AdminShell({
     <aside className="flex h-full flex-col border-r bg-background">
       <div className="flex h-16 items-center gap-2 border-b px-4">
         <span className="flex h-8 w-8 items-center justify-center rounded-md bg-foreground text-sm font-bold text-background">
-          iS
+          JS
         </span>
         <div className="min-w-0">
-          <p className="truncate text-sm font-semibold">iPhoneSkup.pl</p>
+          <p className="truncate text-sm font-semibold">JablkoSkup.pl</p>
           <p className="truncate text-xs text-muted-foreground">Panel administracyjny</p>
         </div>
       </div>

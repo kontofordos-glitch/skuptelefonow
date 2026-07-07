@@ -20,12 +20,14 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b bg-background/86 backdrop-blur-xl">
       <div className="container flex h-16 items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-2 text-base font-semibold" onClick={() => setOpen(false)}>
-          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-foreground text-sm font-bold text-background">
-            iS
-          </span>
-          <span>iPhoneSkup.pl</span>
-        </Link>
+      <Link href="/" className="flex items-center gap-2 text-base font-semibold" onClick={() => setOpen(false)}>
+      <img 
+          src="/logo.png" 
+      alt="Logo JablkoSkup" 
+      className="h-8 w-8 rounded-md object-cover" 
+    />
+  <span>JablkoSkup.pl</span>
+</Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
           {nav.map((item) => (

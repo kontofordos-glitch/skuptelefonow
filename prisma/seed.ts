@@ -5,6 +5,9 @@ import { authenticator } from "otplib";
 const prisma = new PrismaClient();
 
 const models = [
+  { model: "iPhone 17 Pro Max", slug: "iphone-17-pro-max", base: 5200, capacities: ["256 GB", "512 GB", "1 TB"] },
+  { model: "iPhone 17 Pro", slug: "iphone-17-pro", base: 4650, capacities: ["128 GB", "256 GB", "512 GB", "1 TB"] },
+  { model: "iPhone 17", slug: "iphone-17", base: 3450, capacities: ["128 GB", "256 GB", "512 GB"] },
   { model: "iPhone 16 Pro Max", slug: "iphone-16-pro-max", base: 4200, capacities: ["256 GB", "512 GB", "1 TB"] },
   { model: "iPhone 16 Pro", slug: "iphone-16-pro", base: 3700, capacities: ["128 GB", "256 GB", "512 GB", "1 TB"] },
   { model: "iPhone 16", slug: "iphone-16", base: 2800, capacities: ["128 GB", "256 GB", "512 GB"] },
@@ -32,19 +35,19 @@ function capacityBonus(capacity: string) {
 }
 
 async function seedAdmin() {
-  const email = process.env.ADMIN_EMAIL ?? "admin@iphoneskup.pl";
+  const email = process.env.ADMIN_EMAIL ?? "admin@jablkoskup.pl";
   const password = process.env.ADMIN_PASSWORD ?? "Admin123!ChangeMe";
   const passwordHash = await bcrypt.hash(password, 12);
 
   await prisma.user.upsert({
     where: { email },
     update: {
-      name: "Administrator iPhoneSkup",
+      name: "Administrator JablkoSkup",
       passwordHash
     },
     create: {
       email,
-      name: "Administrator iPhoneSkup",
+      name: "Administrator JablkoSkup",
       passwordHash,
       twoFactorSecret: authenticator.generateSecret(),
       twoFactorEnabled: false
@@ -103,7 +106,7 @@ async function seedContent() {
     {
       key: "faq_shipping",
       title: "FAQ wysyłka",
-      value: "Wysyłka jest ubezpieczona i opłacona przez iPhoneSkup.pl. Etykietę otrzymasz po zaakceptowaniu wstępnej wyceny."
+      value: "Wysyłka jest ubezpieczona i opłacona przez JablkoSkup.pl. Etykietę otrzymasz po zaakceptowaniu wstępnej wyceny."
     }
   ];
 
@@ -119,7 +122,7 @@ async function seedContent() {
 async function seedLeads() {
   const sampleLeads = [
     {
-      valuationNumber: "ISK-2026-1041",
+      valuationNumber: "JSK-2026-1041",
       model: "iPhone 15 Pro",
       capacity: "256 GB",
       visualCondition: "GOOD",
@@ -136,7 +139,7 @@ async function seedLeads() {
       notes: "Szybka wypłata BLIK."
     },
     {
-      valuationNumber: "ISK-2026-1042",
+      valuationNumber: "JSK-2026-1042",
       model: "iPhone 16",
       capacity: "128 GB",
       visualCondition: "EXCELLENT",
@@ -152,7 +155,23 @@ async function seedLeads() {
       notes: "Czeka na akceptację finalnej ceny."
     },
     {
-      valuationNumber: "ISK-2026-1043",
+      valuationNumber: "JSK-2026-1044",
+      model: "iPhone 17 Pro",
+      capacity: "256 GB",
+      visualCondition: "EXCELLENT",
+      technicalCondition: "EXCELLENT",
+      batteryHealth: 99,
+      accessories: "box,cable,receipt",
+      estimatedPrice: 4990,
+      status: LeadStatus.NEW,
+      contactName: "Piotr Zieliński",
+      email: "piotr@example.com",
+      phone: "+48 690 884 122",
+      city: "Warszawa",
+      notes: "Nowy model, komplet."
+    },
+    {
+      valuationNumber: "JSK-2026-1043",
       model: "iPhone 14 Pro",
       capacity: "128 GB",
       visualCondition: "FAIR",

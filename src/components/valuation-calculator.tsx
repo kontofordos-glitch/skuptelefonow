@@ -30,7 +30,7 @@ function worstCondition(visual: Condition, technical: Condition) {
 
 export function ValuationCalculator({ compact = false }: { compact?: boolean }) {
   const [prices, setPrices] = useState<PublicPriceItem[]>(defaultPriceMatrix);
-  const [model, setModel] = useState("iPhone 16 Pro");
+  const [model, setModel] = useState("iPhone 17 Pro");
   const [capacity, setCapacity] = useState("256 GB");
   const [visualCondition, setVisualCondition] = useState<Condition>("GOOD");
   const [technicalCondition, setTechnicalCondition] = useState<Condition>("EXCELLENT");
